@@ -249,10 +249,10 @@ const Navbar = () => {
         <div className="fixed inset-0 bg-black/40 z-40 sm:hidden" onClick={closeMobileMenu} />
       )}
 
-      <div className={`fixed top-0 left-0 h-full w-[280px] bg-white z-50 sm:hidden transform transition-transform duration-300 ease-in-out shadow-2xl ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
+      <div className={`fixed top-0 left-0 h-full w-[280px] bg-white z-50 sm:hidden transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
 
-        {/* Drawer header */}
-        <div className="bg-[#f85606] flex items-center justify-between px-4 py-3">
+        {/* Fixed header — never scrolls */}
+        <div className="bg-[#f85606] flex items-center justify-between px-4 py-3 flex-shrink-0">
           <Link to="/" onClick={closeMobileMenu} className="no-underline">
             <Logo />
           </Link>
@@ -261,63 +261,67 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Auth buttons */}
-        <div className="flex gap-3 px-4 py-4 border-b border-gray-100">
-          <Link to="/login" onClick={closeMobileMenu}
-            className="flex-1 text-center text-sm font-bold text-[#f85606] border-2 border-[#f85606] rounded-lg py-2 no-underline hover:bg-orange-50 transition-colors">
-            LOGIN
-          </Link>
-          <Link to="/signup" onClick={closeMobileMenu}
-            className="flex-1 text-center text-sm font-bold text-white bg-[#f85606] rounded-lg py-2 no-underline hover:bg-[#e04d00] transition-colors">
-            SIGN UP
-          </Link>
-        </div>
+        {/* Scrollable content */}
+        <div className="flex-1 overflow-y-auto">
 
-        {/* Nav links */}
-        <nav className="flex flex-col py-2">
-          <button onClick={() => { navigate("/products"); closeMobileMenu(); }}
-            className="flex items-center justify-between px-5 py-4 text-[15px] font-semibold text-gray-800 hover:bg-orange-50 hover:text-[#f85606] transition-colors bg-transparent border-none cursor-pointer text-left w-full">
-            All Products <ChevronRightIcon />
-          </button>
-          {/* Inside mobile drawer nav, replace the Categories button */}
-          <button
-            onClick={() => setMobileCatsOpen(prev => !prev)}
-            className="flex items-center justify-between px-5 py-4 text-[15px] font-semibold text-gray-800 hover:bg-orange-50 hover:text-[#f85606] transition-colors bg-transparent border-none cursor-pointer text-left w-full"
-          >
-            Categories
-            <ChevronRightIcon />
-          </button>
+          {/* Auth buttons */}
+          <div className="flex gap-3 px-4 py-4 border-b border-gray-100">
+            <Link to="/login" onClick={closeMobileMenu}
+              className="flex-1 text-center text-sm font-bold text-[#f85606] border-2 border-[#f85606] rounded-lg py-2 no-underline hover:bg-orange-50 transition-colors">
+              LOGIN
+            </Link>
+            <Link to="/signup" onClick={closeMobileMenu}
+              className="flex-1 text-center text-sm font-bold text-white bg-[#f85606] rounded-lg py-2 no-underline hover:bg-[#e04d00] transition-colors">
+              SIGN UP
+            </Link>
+          </div>
 
-          {/* Expandable category list under mobile */}
-          {mobileCatsOpen && (
-            <div className="flex flex-col bg-gray-50 border-t border-gray-100">
-              {categories.map(cat => (
-                <button
-                  key={cat.slug}
-                  onClick={() => {
-                    navigate(`/category/${cat.slug}`);
-                    closeMobileMenu();
-                    setMobileCatsOpen(false);
-                  }}
-                  className="px-8 py-3 text-[14px] text-gray-600 hover:text-[#f85606] hover:bg-orange-50 transition-colors bg-transparent border-none cursor-pointer text-left capitalize"
-                >
-                  {cat.name}
-                </button>
-              ))}
-            </div>
-          )}
-        </nav>
+          {/* Nav links */}
+          <nav className="flex flex-col py-2">
+            <button onClick={() => { navigate("/products"); closeMobileMenu(); }}
+              className="flex items-center justify-between px-5 py-4 text-[15px] font-semibold text-gray-800 hover:bg-orange-50 hover:text-[#f85606] transition-colors bg-transparent border-none cursor-pointer text-left w-full">
+              All Products <ChevronRightIcon />
+            </button>
 
-        <div className="border-t border-gray-100 mx-4" />
+            <button
+              onClick={() => setMobileCatsOpen(prev => !prev)}
+              className="flex items-center justify-between px-5 py-4 text-[15px] font-semibold text-gray-800 hover:bg-orange-50 hover:text-[#f85606] transition-colors bg-transparent border-none cursor-pointer text-left w-full"
+            >
+              Categories
+              <ChevronRightIcon />
+            </button>
 
-        {/* Utility links */}
-        <div className="flex flex-col py-2">
-          {[{ label: "Save More on App", href: "#" }, { label: "Sell on SwS", href: "#" }, { label: "Help & Support", href: "#" }].map(({ label, href }) => (
-            <a key={label} href={href} className="px-5 py-3 text-[14px] text-gray-500 hover:text-[#f85606] hover:bg-orange-50 transition-colors no-underline">
-              {label}
-            </a>
-          ))}
-        </div>
+            {mobileCatsOpen && (
+              <div className="flex flex-col bg-gray-50 border-t border-gray-100">
+                {categories.map(cat => (
+                  <button
+                    key={cat.slug}
+                    onClick={() => {
+                      navigate(`/category/${cat.slug}`);
+                      closeMobileMenu();
+                      setMobileCatsOpen(false);
+                    }}
+                    className="px-8 py-3 text-[14px] text-gray-600 hover:text-[#f85606] hover:bg-orange-50 transition-colors bg-transparent border-none cursor-pointer text-left capitalize"
+                  >
+                    {cat.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </nav>
+
+          <div className="border-t border-gray-100 mx-4" />
+
+          {/* Utility links */}
+          <div className="flex flex-col py-2">
+            {[{ label: "Save More on App", href: "#" }, { label: "Sell on SwS", href: "#" }, { label: "Help & Support", href: "#" }].map(({ label, href }) => (
+              <a key={label} href={href} className="px-5 py-3 text-[14px] text-gray-500 hover:text-[#f85606] hover:bg-orange-50 transition-colors no-underline">
+                {label}
+              </a>
+            ))}
+          </div>
+
+        </div>{/* end scrollable */}
       </div>
     </>
   );
