@@ -61,8 +61,8 @@ const Footer = () => (
           <ul className="list-none p-0 m-0 space-y-[0.5px] text-[10px]">
             {[
               "Help Center", "How to Buy", "Corporate & Bulk Purchasing",
-              "Returns & Refunds", "Daraz Shop", "Contact Us",
-              "Purchase Protection", "Daraz Pick up Points",
+              "Returns & Refunds", "SwS Shop", "Contact Us",
+              "Purchase Protection", "SwS Pick up Points",
             ].map((item) => <FooterLink key={item}>{item}</FooterLink>)}
           </ul>
         </div>
