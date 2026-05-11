@@ -96,7 +96,7 @@ const Navbar = () => {
         <div className="bg-[#f85606] hidden sm:flex justify-end items-center px-10 py-[5px] gap-5 text-[11.5px]">
           <a href="#" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">SAVE MORE ON APP</a>
           <span className="text-white/30">|</span>
-          <a href="#" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">SELL ON DARAZ</a>
+          <a href="#" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">SELL ON SwS</a>
           <span className="text-white/30">|</span>
           <a href="#" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">HELP &amp; SUPPORT</a>
           <span className="text-white/30">|</span>

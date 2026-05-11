@@ -69,14 +69,14 @@ const Footer = () => (
 
         {/* Daraz */}
         <div className="min-w-[170px]">
-          <h4 className="text-[15px] font-bold text-gray-800 mb-2.5 mt-0">Daraz</h4>
+          <h4 className="text-[15px] font-bold text-gray-800 mb-2.5 mt-0">SwS</h4>
           <ul className="list-none p-0 m-0 space-y-[0.5px] text-[10px]">
-            {["About Us", "Digital Payments", "Daraz Donates", "Daraz Blog", "Terms & Conditions", "Privacy Policy"].map(
+            {["About Us", "Digital Payments", "SwS Donates", "SwS Blog", "Terms & Conditions", "Privacy Policy"].map(
               (item) => <FooterLink key={item}>{item}</FooterLink>
             )}
             <FooterText>NTN Number : 4012118-6</FooterText>
             <FooterText>STRN Number : 1700401211818</FooterText>
-            {["Online Shopping App", "Online Grocery Shopping", "Daraz Exclusive", "Daraz University", "Sell on Daraz", "Join Daraz Affiliate Program"].map(
+            {["Online Shopping App", "Online Grocery Shopping", "SwS Exclusive", "SwS University", "Sell on SwS", "Join SwS Affiliate Program"].map(
               (item) => <FooterLink key={item}>{item}</FooterLink>
             )}
           </ul>
@@ -197,7 +197,7 @@ const Footer = () => (
 
         {/* Daraz International */}
         <div>
-          <h4 className="text-[13px] font-bold text-gray-800 mb-3 mt-0">Daraz International</h4>
+          <h4 className="text-[13px] font-bold text-gray-800 mb-3 mt-0">SwS International</h4>
           <div className="flex gap-5 flex-wrap">
             {[
               { code: "PK", name: "Pakistan" },
