@@ -312,7 +312,7 @@ const Navbar = () => {
 
         {/* Utility links */}
         <div className="flex flex-col py-2">
-          {[{ label: "Save More on App", href: "#" }, { label: "Sell on Daraz", href: "#" }, { label: "Help & Support", href: "#" }].map(({ label, href }) => (
+          {[{ label: "Save More on App", href: "#" }, { label: "Sell on SwS", href: "#" }, { label: "Help & Support", href: "#" }].map(({ label, href }) => (
             <a key={label} href={href} className="px-5 py-3 text-[14px] text-gray-500 hover:text-[#f85606] hover:bg-orange-50 transition-colors no-underline">
               {label}
             </a>
