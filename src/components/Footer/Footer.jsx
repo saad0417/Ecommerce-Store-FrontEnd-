@@ -74,8 +74,6 @@ const Footer = () => (
             {["About Us", "Digital Payments", "SwS Donates", "SwS Blog", "Terms & Conditions", "Privacy Policy"].map(
               (item) => <FooterLink key={item}>{item}</FooterLink>
             )}
-            <FooterText>NTN Number : 4012118-6</FooterText>
-            <FooterText>STRN Number : 1700401211818</FooterText>
             {["Online Shopping App", "Online Grocery Shopping", "SwS Exclusive", "SwS University", "Sell on SwS", "Join SwS Affiliate Program"].map(
               (item) => <FooterLink key={item}>{item}</FooterLink>
             )}
