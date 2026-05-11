@@ -254,7 +254,7 @@ const Footer = () => (
 
         {/* Copyright */}
         <div className="flex items-end">
-          <span className="text-[12px] text-gray-400">© Daraz 2026</span>
+          <span className="text-[12px] text-gray-400">© shopwithsaad 2026</span>
         </div>
 
       </div>
