@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.2);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@utility animate-fade-in {
+  animation: fade-in 0.25s ease-out;
+}
+
+
+
+/* index.css */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.toast-animate {
+  animation: fadeSlideIn 0.3s ease-out;
+}
+
+
+
+/* Truck animation for loading state */
+@keyframes truck-drive {
+  0%   { left: -80px; }
+  100% { left: 110%; }
+}
+
+.animate-truck {
+  animation: truck-drive 2.5s linear infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
