@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import { Navbar, Footer } from "./components/index";
 import Loader from "./components/Loader";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const loading = useSelector((state) => state.loader.loading);
@@ -34,6 +35,7 @@ function App() {
       </main>
 
       <Footer />
+      <Analytics />
     </div>
   );
 }
