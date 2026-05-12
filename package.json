@@ -19,6 +19,7 @@
     "@mui/material": "^9.0.1",
     "@reduxjs/toolkit": "^2.11.2",
     "@tailwindcss/vite": "^4.2.2",
+    "@vercel/speed-insights": "^2.0.0",
     "axios": "^1.15.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
