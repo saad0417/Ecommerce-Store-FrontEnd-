@@ -6,6 +6,8 @@ import "./index.css";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const Home = lazy(() => import("./pages/Home.jsx"));
 const LoginPage = lazy(() => import("./pages/LoginPage.jsx"));
@@ -61,6 +63,8 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
+      <Analytics />        {/* Vercel Analytics component to track user interactions and page views */}
+      <SpeedInsights />    {/* Vercel Speed Insights component to track page load times */}
     </Provider>
   </StrictMode>
 );
