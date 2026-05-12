@@ -49,7 +49,7 @@ function HomeSlider() {
 
         @media (min-width: 1024px) {
           .slider-outer {
-            padding: 12px 40px;     /* desktop: daraz jesa padding */
+            padding: 12px 40px; 
           }
         }
 
